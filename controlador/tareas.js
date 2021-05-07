@@ -9,7 +9,6 @@ const guardarDatos = () => {
         if (err) throw new Error('No se pudo guardar la data', err);
     });
 }
-
 const leerDatos = () => {
     try {
         tareasPorHacer = require('../data/datos.json');
@@ -17,37 +16,30 @@ const leerDatos = () => {
         tareasPorHacer = []
     }
 }
-
 const crear = (descripcion) => {
-
     leerDatos();
-
     let inicio = tareasPorHacer.findIndex(tarea => tarea.descripcion === descripcion);
 
     if (inicio > 0) {
         console.log('');
         return 'La tarea buscada ya ha sido creada'.red;
     }
-
     let tarea = {
         descripcion,
         completado: false
     }
-
     tareasPorHacer.push(tarea);
 
     guardarDatos();
 
     return tarea;
 }
-
 const listar = () => {
 
     leerDatos();
     console.log("===================================".blue);
     console.log("======== TAREAS POR HACER =========".blue);
     console.log("===================================".blue);
-
 
     for (let k = 0; k < tareasPorHacer.length; k++) {
         if (tareasPorHacer[k].completado == true) {
@@ -61,11 +53,8 @@ const listar = () => {
             console.log((`Tarea Propuesta: ${tareasPorHacer[k].descripcion}`).brightGreen);
             console.log("Estado: Tarea Incompleta".red);
         }
-
     }
 }
-
-
 
 
 const actualizar = (descripcion, completado = true) => {
@@ -77,12 +66,9 @@ const actualizar = (descripcion, completado = true) => {
         tareasPorHacer[index].completado = completado;
         guardarDatos();
         return true;
-
     }
-
     return false;
 }
-
 const eliminar = (descripcion) => {
     leerDatos();
 
@@ -98,7 +84,6 @@ const eliminar = (descripcion) => {
 
 
 }
-
 
 module.exports = {
     crear,
