@@ -20,7 +20,8 @@ switch (comando) {
         break;
     case 'eliminar':
         console.log('Eliminando una tarea...');
-        eliminar(argv.descripcion);
+        err = eliminar(argv.descripcion);
+        console.log(err)
         break;
     default:
         console.log('Comando no valido');

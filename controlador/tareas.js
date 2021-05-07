@@ -51,7 +51,7 @@ const listar = () => {
         } else {
             console.log("-----------------------------------".brightBlue);
             console.log((`Tarea N° ${k + 1}`).gray);
-            console.log((`Tarea Proppuesta: ${tareasPorHacer[k].descripcion}`).brightGreen);
+            console.log((`Tarea Propuesta: ${tareasPorHacer[k].descripcion}`).brightGreen);
             console.log("Estado: Tarea Incompleta".red);
         }
 
@@ -84,10 +84,10 @@ const eliminar = (descripcion) => {
         tareasPorHacer.splice(eli, 1);
         guardarDatos();
         console.log('');
-        return 'Tarea eliminada'.red;
+        return 'La tarea buscada se esta eliminando...'.red;
     }
     console.log('');
-    return 'No existe la tarea que desea eliminar'.red;
+    return 'La tarea buscada no existe'.red;
 
 
 }
