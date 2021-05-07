@@ -44,14 +44,14 @@ const listar = () => {
 
     for (let k = 0; k < tareasPorHacer.length; k++) {
         if (tareasPorHacer[k].completado == true) {
-            console.log("-----------------------------------".blue);
+            console.log("-----------------------------------".brightBlue);
             console.log((`Tarea N° ${k + 1}`).gray);
-            console.log((`Tarea: ${tareasPorHacer[k].descripcion}`).green);
+            console.log((`Tarea Propuesta: ${tareasPorHacer[k].descripcion}`).brightGreen);
             console.log("Estado: Tarea Completa".yellow);
         } else {
-            console.log("-----------------------------------".blue);
+            console.log("-----------------------------------".brightBlue);
             console.log((`Tarea N° ${k + 1}`).gray);
-            console.log((`Tarea: ${tareasPorHacer[k].descripcion}`).green);
+            console.log((`Tarea Proppuesta: ${tareasPorHacer[k].descripcion}`).brightGreen);
             console.log("Estado: Tarea Incompleta".red);
         }
 
