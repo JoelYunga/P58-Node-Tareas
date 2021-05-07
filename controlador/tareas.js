@@ -22,6 +22,13 @@ const crear = (descripcion) => {
 
     leerDatos();
 
+    let inicio = tareasPorHacer.findIndex(tarea => tarea.descripcion === descripcion);
+
+    if (inicio > 0) {
+        console.log('');
+        return 'La tarea buscada ya ha sido creada'.red;
+    }
+
     let tarea = {
         descripcion,
         completado: false
